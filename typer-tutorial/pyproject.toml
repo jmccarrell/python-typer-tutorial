@@ -10,6 +10,8 @@ python = "^3.9.18"
 typer = {version = "^0.9.0", extras = ["all"]}
 pydantic = "^2.6.3"
 
+[tool.ruff]
+line-length = 120
 
 [build-system]
 requires = ["poetry-core"]

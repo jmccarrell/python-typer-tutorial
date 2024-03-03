@@ -1,11 +1,12 @@
 import typer
 from typing_extensions import Annotated
 
-app = typer.Typer()
+app = typer.Typer(help="Super duper user mgr")
 
 
 @app.command()
 def create(user_name: str):
+    """Create a new user: USER_NAME."""
     print(f"creating user {user_name}")
 
 
@@ -13,9 +14,17 @@ def create(user_name: str):
 def delete(
     user_name: str,
     force: Annotated[
-        bool, typer.Option(prompt="Are you sure you want to delete the user?")
+        bool,
+        typer.Option(
+            prompt="Are you sure you want to delete the user?",
+            help="force deletion without confirmation",
+        ),
     ],
 ):
+    """Delete the user: USER_NAME
+
+    Will prompt for confimation unless --force
+    """
     if not force:
         print("deletion cancelled")
         return
