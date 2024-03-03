@@ -8,6 +8,6 @@ def main(name: Annotated[str, typer.Argument(envvar="SUPER_NAME")] = "Blech"):
 if __name__ == "__main__":
     typer.run(main)
 
-""" (typer-tutorial-py3.9) ❯ SUPER_NAME=Glurg !py
-SUPER_NAME=Glurg python env_var_cli_arg.py
-hiya Mr. Glurg """
+# (typer-tutorial-py3.9) ❯ SUPER_NAME=Glurg !py
+# SUPER_NAME=Glurg python env_var_cli_arg.py
+# hiya Mr. Glurg
